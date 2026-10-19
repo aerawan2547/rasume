@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เรซูเม่ - นางสาว เอราวัณ แป้นทอง</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b12; --panel:#14141f; --panel2:#1b1b2b;
+  --purple:#b583ff; --purple-d:#8b3dff; --text:#ececf5; --muted:#a3a3b8;
+  --side:290px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Thai',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+/* Banner */
+.banner{
+  height:200px;display:flex;flex-direction:column;justify-content:center;
+  padding:0 40px 0 calc(var(--side) + 40px);
+  background:
+    radial-gradient(circle at 80% 20%,rgba(181,131,255,.55),transparent 55%),
+    linear-gradient(135deg,#000 0%,#1a0933 60%,var(--purple-d) 150%);
+  border-bottom:2px solid var(--purple-d);
+}
+.banner h1{font-size:2.3rem;font-weight:700;letter-spacing:.5px}
+.banner h1 span{color:var(--purple)}
+.banner p{color:var(--muted);font-size:1.1rem}
+
+/* Sidebar */
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:var(--side);
+  background:var(--panel);border-right:1px solid #262640;
+  padding:28px 22px;overflow-y:auto;z-index:10;
+}
+.avatar{
+  width:150px;height:150px;border-radius:50%;margin:0 auto 14px;
+  border:4px solid var(--purple);box-shadow:0 0 25px rgba(139,61,255,.6);
+  background:linear-gradient(135deg,var(--purple-d),#000);
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;font-weight:700;overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.sidebar h2{text-align:center;font-size:1.2rem}
+.sidebar .role{text-align:center;color:var(--purple);font-size:.85rem;margin-bottom:18px}
+.menu{list-style:none;margin:16px 0}
+.menu a{
+  display:block;padding:10px 14px;border-radius:10px;color:var(--text);
+  text-decoration:none;margin-bottom:6px;transition:.2s;
+}
+.menu a:hover,.menu a.active{background:linear-gradient(90deg,var(--purple-d),#5b21b6);}
+.menu-title{color:var(--muted);font-size:.8rem;margin:18px 0 6px;letter-spacing:1px}
+.info dt{color:var(--purple);font-size:.78rem;margin-top:10px}
+.info dd{font-size:.92rem;word-break:break-word}
+
+/* Content */
+main{margin-left:var(--side);padding:40px}
+section{margin-bottom:50px;scroll-margin-top:20px}
+h3.sec{
+  font-size:1.6rem;margin-bottom:20px;padding-left:14px;
+  border-left:5px solid var(--purple);
+}
+.card{background:var(--panel);border:1px solid #262640;border-radius:16px;padding:22px}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{
+  padding:8px 18px;border-radius:30px;background:var(--panel2);
+  border:1px solid var(--purple-d);color:var(--text);text-decoration:none;transition:.2s;
+}
+a.tag:hover{background:var(--purple-d);box-shadow:0 0 14px var(--purple-d)}
+ul.list{list-style:none}
+ul.list li{padding:8px 0 8px 28px;position:relative;border-bottom:1px dashed #2a2a45}
+ul.list li:last-child{border:0}
+ul.list li::before{content:"◆";color:var(--purple);position:absolute;left:0;font-size:.8rem;top:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:0;width:3px;
+  background:linear-gradient(var(--purple),transparent)}
+.t-item{position:relative;margin-bottom:28px}
+.t-item::before{content:"";position:absolute;left:-34px;top:8px;width:16px;height:16px;
+  border-radius:50%;background:var(--purple);box-shadow:0 0 12px var(--purple)}
+.t-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.t-head h4{font-size:1.1rem;font-weight:600}
+.t-meta{display:flex;justify-content:space-between;color:var(--purple);font-style:italic;margin:2px 0 8px}
+.t-item ul{padding-left:22px;color:#d6d6e6}
+
+footer{text-align:center;color:var(--muted);padding:20px;margin-left:var(--side);font-size:.85rem}
+
+@media(max-width:850px){
+  :root{--side:0px}
+  .sidebar{position:static;width:100%;border-right:0}
+  .banner{padding:0 20px;height:150px}
+  main{padding:24px 18px}
+  .grid{grid-template-columns:1fr}
+  footer{margin-left:0}
+}
+.gh{display:inline-flex;align-items:center;gap:8px;color:var(--purple);text-decoration:none;transition:.2s}.gh:hover{color:#fff;text-shadow:0 0 10px var(--purple-d);text-decoration:underline}
+.btn{display:inline-block;margin-top:10px;padding:9px 20px;border-radius:30px;color:#fff;text-decoration:none;font-size:.92rem;
+ background:linear-gradient(90deg,var(--purple-d),#5b21b6);box-shadow:0 0 0 rgba(139,61,255,0);transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(139,61,255,.55)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:10px}
+.shot{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;cursor:zoom-in;
+ background:linear-gradient(135deg,#1a0933,var(--purple-d));border:1px solid #262640}
+.shot img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.shot:hover img{transform:scale(1.12)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;font-size:.8rem;
+ background:linear-gradient(transparent,rgba(0,0,0,.8));opacity:0;transform:translateY(8px);transition:.3s}
+.shot:hover figcaption{opacity:1;transform:none}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 0 40px var(--purple-d)}
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.js .reveal.show{opacity:1;transform:none}
+.card{transition:.3s}.card:hover{border-color:var(--purple-d);box-shadow:0 0 22px rgba(139,61,255,.25)}
+
+.banner{position:relative}
+.cv-btn{position:absolute;top:22px;right:28px;padding:10px 22px;border-radius:30px;color:#fff;text-decoration:none;font-weight:600;
+ background:rgba(0,0,0,.45);border:2px solid var(--purple);backdrop-filter:blur(6px);transition:.25s;animation:pulse 2.4s infinite}
+.cv-btn:hover{background:var(--purple-d);transform:translateY(-3px);animation:none;box-shadow:0 8px 24px rgba(139,61,255,.7)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(181,131,255,.6)}70%{box-shadow:0 0 0 14px rgba(181,131,255,0)}100%{box-shadow:0 0 0 0 rgba(181,131,255,0)}}
+@media(max-width:850px){.cv-btn{top:12px;right:12px;padding:8px 16px;font-size:.85rem}}
+
+.cv-btn{font-family:inherit;font-size:1rem;cursor:pointer}
+.cv-modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;z-index:200;overflow-y:auto;padding:30px 16px}
+.cv-modal.open{display:block}
+.cv-box{position:relative;max-width:850px;margin:0 auto;background:var(--panel);border:1px solid var(--purple-d);
+ border-radius:16px;padding:26px;box-shadow:0 0 40px rgba(139,61,255,.5);animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+.cv-box h3{margin-bottom:16px;color:var(--purple)}
+.cv-close{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;
+ background:var(--purple-d);color:#fff;font-size:1rem}
+.cv-close:hover{background:var(--purple)}
+.cv-pages figure{margin-bottom:24px;text-align:center}
+.cv-pages img{width:100%;border-radius:10px;border:1px solid #262640}
+.cv-miss{padding:40px;border:1px dashed var(--purple-d);border-radius:10px;color:var(--muted)}
+
+.avatar{position:relative}
+.avatar .ini{position:absolute;inset:0;display:grid;place-items:center}
+.avatar img{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.avatar img.on{opacity:1}
+.top-actions{position:absolute;top:22px;right:28px;display:flex;gap:10px;align-items:center}
+.top-actions .cv-btn{position:static}
+.lang-sw{display:flex;border:2px solid var(--purple);border-radius:30px;overflow:hidden;background:rgba(0,0,0,.45);backdrop-filter:blur(6px)}
+.lang-sw button{font-family:inherit;font-size:.9rem;font-weight:600;color:#fff;background:none;border:0;padding:9px 16px;cursor:pointer;transition:.25s}
+.lang-sw button.active{background:var(--purple-d)}
+.lang-sw button:not(.active):hover{background:rgba(139,61,255,.35)}
+@media(max-width:850px){.top-actions{top:12px;right:12px;gap:6px}.top-actions .cv-btn{padding:8px 12px;font-size:.8rem}.lang-sw button{padding:7px 11px;font-size:.8rem}}
+ul.list li b{color:#fff}
+.stack{padding:8px 22px}
+.stack-row{display:flex;gap:20px;align-items:center;padding:16px 0;border-bottom:1px dashed #2a2a45}
+.stack-row:last-child{border:0}
+.stack-cat{flex:0 0 190px;font-weight:600;color:var(--purple)}
+.stack-badges{display:flex;flex-wrap:wrap;gap:10px}
+.bdg{display:inline-block;padding:7px 18px;border-radius:8px;background:var(--c);color:var(--f);font-weight:700;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;
+ box-shadow:0 4px 14px rgba(0,0,0,.35);transition:.25s}
+.bdg:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 8px 22px var(--c)}
+@media(max-width:600px){.stack-row{flex-direction:column;align-items:flex-start;gap:10px}.stack-cat{flex:none}}
+html[lang="en"] figure[data-l="th"],html[lang="th"] figure[data-l="en"]{display:none}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="avatar"><span class="ini">อ</span><img src="profile1.jpg" alt="Profile 1"><img src="profile2.jpg" alt="Profile 2"></div>
+  <h2><span class="i " data-en="Miss Arawan Panthong">นางสาว เอราวัณ แป้นทอง</span></h2>
+  <p class="role">Web Developer | System Designer</p>
+  <ul class="menu"><li><a href="#about" class="active"><span class="i " data-en="About Me">เกี่ยวกับฉัน</span></a></li><li><a href="#personal"><span class="i " data-en="Personal Info">ข้อมูลส่วนตัว</span></a></li><li><a href="#stack"><span class="i " data-en="Tech Stack">เทคโนโลยีที่ใช้</span></a></li><li><a href="#skills"><span class="i " data-en="Tools &amp;amp; Software">ความถนัด</span></a></li><li><a href="#abilities"><span class="i " data-en="Core Skills">ความสามารถ</span></a></li><li><a href="#strengths"><span class="i " data-en="Soft Skills">ทักษะเฉพาะตัว</span></a></li><li><a href="#languages"><span class="i " data-en="Languages">ทักษะด้านภาษา</span></a></li><li><a href="#experience"><span class="i " data-en="Experience &amp;amp; Projects">ประสบการณ์และผลงาน</span></a></li><li><a href="#seminar"><span class="i " data-en="Seminar Event">การจัดงานสัมมนาโปรเจค</span></a></li></ul>
+</aside>
+<header class="banner"><div class="top-actions"><div class="lang-sw" role="group" aria-label="Language"><button type="button" data-lang="th" class="active">TH</button><button type="button" data-lang="en">EN</button></div><button class="cv-btn" id="cvOpen" type="button">📄เรซูเม่ <span class="i " data-en="Resume"></span></button></div><h1>RESUME <span><span class="i " data-en="">เรซูเม่</span></span></h1><p>Web Developer | System Designer</p></header>
+<main>
+<section id="about"><h3 class="sec"><span class="i " data-en="About Me">เกี่ยวกับฉัน</span></h3><div class="card"><ul class="list"><li><span class="i " data-en="🎓 Studying Computer Science at &lt;b&gt;Phetchaburi Rajabhat University (PBRU)&lt;/b&gt;">🎓 กำลังศึกษาสาขาวิทยาการคอมพิวเตอร์ ที่ <b>มหาวิทยาลัยราชภัฏเพชรบุรี (PBRU)</b></span></li><li><span class="i " data-en="💻 Passionate about &lt;b&gt;Web Development&lt;/b&gt; and building practical web applications">💻 หลงใหลในการพัฒนาเว็บไซต์ (<b>Web Development</b>) และสร้างเว็บแอปพลิเคชันที่ใช้งานได้จริง</span></li></ul></div></section>
+<section id="personal"><h3 class="sec"><span class="i " data-en="Personal Information">ข้อมูลส่วนตัว</span></h3><div class="card"><ul class="list"><li><strong style="color:var(--purple)"><span class="i " data-en="Age">อายุ</span>:</strong> <span class="i " data-en="21 years old">21 ปี</span></li><li><strong style="color:var(--purple)"><span class="i " data-en="Email">อีเมล</span>:</strong> aerawan2547@gmail.com</li><li><strong style="color:var(--purple)"><span class="i " data-en="Phone">โทรศัพท์</span>:</strong> 065-438-2300</li><li><strong style="color:var(--purple)"><span class="i " data-en="Address">ที่อยู่</span>:</strong> <span class="i " data-en="4 Moo 7, Tha Khoi, Tha Yang, Phetchaburi 76130, Thailand">4 หมู่ 7 ตำบลท่าคอย อำเภอท่ายาง จังหวัดเพชรบุรี 76130, ประเทศไทย</span></li><li><strong style="color:var(--purple)"><span class="i " data-en="Education">ประวัติการศึกษา</span>:</strong> <span class="i " data-en="Thayangwittaya School (Lower &amp;amp; Upper Secondary)&lt;br&gt;Bachelor of Science in Computer Science (Currently Studying)&lt;br&gt;Phetchaburi Rajabhat University">โรงเรียนท่ายางวิทยา มัธยมศึกษาตอนต้น/ตอนปลาย<br>ปริญญาตรี สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏเพชรบุรี (กำลังศึกษา)</span></li><li><strong style="color:var(--purple)"><span class="i " data-en="GitHub">GitHub</span>:</strong> <a class="gh" href="https://github.com/aerawan2547" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>github.com/aerawan2547</a></li></ul></div></section>
+<section id="stack"><h3 class="sec"><span class="i " data-en="Tech Stack &amp;amp; Skills">เทคโนโลยีและทักษะ</span></h3><div class="card stack"><div class="stack-row"><div class="stack-cat"><span class="i " data-en="Frontend">ส่วนหน้าเว็บ</span></div><div class="stack-badges"><span class="bdg" style="--c:#e34f26;--f:#fff">HTML5</span><span class="bdg" style="--c:#1572b6;--f:#fff">CSS3</span><span class="bdg" style="--c:#f7df1e;--f:#111">JavaScript</span><span class="bdg" style="--c:#7952b3;--f:#fff">Bootstrap</span></div></div><div class="stack-row"><div class="stack-cat"><span class="i " data-en="Backend &amp;amp; DB">ส่วนหลังบ้าน &amp; ฐานข้อมูล</span></div><div class="stack-badges"><span class="bdg" style="--c:#777bb4;--f:#fff">PHP</span><span class="bdg" style="--c:#4479a1;--f:#fff">MySQL</span></div></div><div class="stack-row"><div class="stack-cat"><span class="i " data-en="Tools &amp;amp; Env">เครื่องมือและสภาพแวดล้อม</span></div><div class="stack-badges"><span class="bdg" style="--c:#f05032;--f:#fff">Git</span><span class="bdg" style="--c:#007acc;--f:#fff">VS Code</span><span class="bdg" style="--c:#f24e1e;--f:#fff">Figma</span><span class="bdg" style="--c:#fb7a24;--f:#fff">XAMPP</span></div></div></div></section>
+<section id="skills"><h3 class="sec"><span class="i " data-en="Tools &amp;amp; Software">ความถนัด</span></h3><div class="card tags"><a class="tag" href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code</a><span class="tag">XAMPP - phpMyAdmin</span><span class="tag">Microsoft Word</span><span class="tag">Figma</span><span class="tag">Canva</span><span class="i tag" data-en="etc.">ฯลฯ</span></div></section>
+<section id="abilities"><h3 class="sec"><span class="i " data-en="Core Skills">ความสามารถ</span></h3><div class="card"><ul class="list"><li><span class="i " data-en="System Analysis &amp;amp; Design">วางแผนพัฒนาระบบ</span></li><li><span class="i " data-en="Programming: PHP / HTML5 / JavaScript">ทักษะด้านการ coding: PHP / HTML5 / JavaScript</span></li><li><span class="i " data-en="Database Management">ทักษะด้านการจัดการฐานข้อมูล (Database)</span></li><li><span class="i " data-en="UI/UX &amp;amp; Graphic Design">ทักษะด้านการออกแบบกราฟฟิกและตกแต่งเว็บไซต์</span></li></ul></div></section>
+<section id="strengths"><h3 class="sec"><span class="i " data-en="Soft Skills">ทักษะเฉพาะตัว</span></h3><div class="card"><ul class="list"><li><span class="i " data-en="Punctual and highly responsible">ตรงต่อเวลา มีความรับผิดชอบ</span></li><li><span class="i " data-en="Adaptable to changing situations">สามารถปรับตัวตามสถานการณ์ได้</span></li><li><span class="i " data-en="Passionate about design and creative work">สนใจด้านการออกแบบและสร้างสรรค์</span></li></ul></div></section>
+<section id="languages"><h3 class="sec"><span class="i " data-en="Languages">ทักษะด้านภาษา</span></h3><div class="card"><ul class="list"><li><span class="i " data-en="Thai - Native">ภาษาไทย - เชี่ยวชาญ</span></li><li><span class="i " data-en="English - Basic">ภาษาอังกฤษ - พื้นฐาน</span></li></ul></div></section>
+<section id="experience"><h3 class="sec"><span class="i " data-en="Experience &amp;amp; Projects">ประสบการณ์และผลงาน</span></h3><div class="timeline"><div class="t-item"><div class="t-head"><h4><span class="i " data-en="Digital Art Marketplace Web Application">การออกแบบและพัฒนาเว็บไซต์ตลาดกลางศิลปะดิจิทัล</span></h4></div><div class="t-meta"><span>Project</span><span>2026</span></div><ul><li><span class="i " data-en="Planned and developed the overall system architecture">วางแผนออกแบบพัฒนาระบบ</span></li><li><span class="i " data-en="Designed and optimized the database schema">ออกแบบฐานข้อมูล</span></li><li><span class="i " data-en="Implemented role-based access for 3 main user groups: Users, Artists, and Administrators">ระบบนี้แบ่งเป็นผู้ใช้งาน 3 กลุ่มหลักๆ ( ผู้ใช้งาน ศิลปิน และ ผู้ดูแลระบบ )</span></li><li><span class="i " data-en="Created evaluation forms and analyzed user satisfaction">สร้างฟอร์มและประเมินความพึงพอใจของผู้ใช้งาน</span></li><li><span class="i " data-en="Authored comprehensive project documentation and delivered technical presentations">ตรวจสอบจัดทำเอกสารรายงาน และ นำเสนอ</span></li></ul><a class="btn" href="https://drive.google.com/drive/folders/1jtCt02C3ApRd-PWu3lHV3vzN8Hw3wGly?usp=sharing" target="_blank" rel="noopener"><span class="i " data-en="📁 Google Drive Files">📁 ไฟล์ Google Drive</span></a></div><div class="t-item"><div class="t-head"><h4><span class="i " data-en="Camping Gear Website">ออกแบบและพัฒนาเว็บไซต์อุปกรณ์แคมป์ปิ้ง</span></h4></div><div class="t-meta"><span>Project group</span><span>2026</span></div><ul><li><span class="i " data-en="Collaborated on end-to-end system design and web application development">ร่วมแบบรวมถึงพัฒนาระบบ</span></li><li><span class="i " data-en="Managed website graphics and created user interface designs">จัดการกราฟิกเว็บไซต์</span></li><li><span class="i " data-en="Authored technical reports and project documentation">จัดทำเอกสารรายงาน</span></li></ul><a class="btn" href="https://drive.google.com/drive/folders/1jtCt02C3ApRd-PWu3lHV3vzN8Hw3wGly?usp=sharing" target="_blank" rel="noopener"><span class="i " data-en="📁 Google Drive Files">📁 ไฟล์ Google Drive</span></a></div><div class="t-item"><div class="t-head"><h4><span class="i " data-en="Beachfront Bicycle Rental System">ออกแบบและพัฒนาระบบการเช่ารถจักรยานริมชายหาด</span></h4></div><div class="t-meta"><span>Project group</span><span>2025</span></div><ul><li><span class="i " data-en="Designed system architecture and conducted target audience analysis">ออกแบบระบบและกลุ่มเป้าหมาย</span></li><li><span class="i " data-en="Developed the database schema">ออกแบบฐานข้อมูล</span></li><li><span class="i " data-en="Structured system entity relationships">จัดวางความสัมพันธ์ของระบบ</span></li><li><span class="i " data-en="Authored detailed system documentation and technical reports">จัดทำเอกสารรายงานระบบ</span></li></ul><a class="btn" href="https://drive.google.com/drive/folders/1jtCt02C3ApRd-PWu3lHV3vzN8Hw3wGly?usp=sharing" target="_blank" rel="noopener"><span class="i " data-en="📁 Google Drive Files">📁 ไฟล์ Google Drive</span></a></div></div></section>
+<section id="seminar"><h3 class="sec"><span class="i " data-en="Project Seminar Event">การจัดงานสัมมนาโปรเจค</span></h3><div class="card"><p style="margin-bottom:16px;color:#d6d6e6"><span class="i " data-en="Held on 16 September 2026. Role: team leader, responsible for overseeing overall on-site order and operations.">จัดขึ้นเมื่อวันที่ 16 กันยายน 2569 และบทบาทหน้าที่หัวหน้ากลุ่มและผู้ดูแลความเรียบร้อย</span></p><div class="gallery"><figure class="shot"><img src="seminar1.jpg" alt="Seminar 1" loading="lazy" onerror="this.style.display='none'"><figcaption><span class="i " data-en="Seminar photo 1">ภาพงานสัมมนา 1</span></figcaption></figure><figure class="shot"><img src="seminar2.jpg" alt="Seminar 2" loading="lazy" onerror="this.style.display='none'"><figcaption><span class="i " data-en="Seminar photo 2">ภาพงานสัมมนา 2</span></figcaption></figure><figure class="shot"><img src="seminar3.jpg" alt="Seminar 3" loading="lazy" onerror="this.style.display='none'"><figcaption><span class="i " data-en="Seminar photo 3">ภาพงานสัมมนา 3</span></figcaption></figure><figure class="shot"><img src="seminar4.jpg" alt="Seminar 4" loading="lazy" onerror="this.style.display='none'"><figcaption><span class="i " data-en="Seminar photo 4">ภาพงานสัมมนา 4</span></figcaption></figure></div><a class="btn" href="file:///C:/seminar-e-report/index.html" target="_blank" rel="noopener"><span class="i " data-en="📖 E-Report">📖 E-Report</span></a></div></section>
+</main>
+<div class="cv-modal" id="cvModal"><div class="cv-box">
+<button class="cv-close" id="cvClose" type="button" aria-label="Close">✕</button>
+<h3><span class="i " data-en="Resume / เรซูเม่">เรซูเม่ / Resume</span></h3>
+<div class="cv-pages">
+<figure data-l="th"><img src="resume1.jpg" alt="เรซูเม่ภาษาไทย" onerror="this.outerHTML='<p class=cv-miss>ไม่พบไฟล์ resume1.jpg</p>'"><a class="btn" href="resume1.jpg" download><span class="i " data-en="⬇ Download Thai version">⬇ ดาวน์โหลดฉบับภาษาไทย</span></a></figure>
+<figure data-l="en"><img src="resume2.jpg" alt="English resume" onerror="this.outerHTML='<p class=cv-miss>resume2.jpg not found</p>'"><a class="btn" href="resume2.jpg" download><span class="i " data-en="⬇ Download English version">⬇ ดาวน์โหลดฉบับภาษาอังกฤษ</span></a></figure>
+</div></div></div>
+<div class="lightbox" id="lb"><img alt=""></div>
+<footer>&copy; 2026 <span class="i " data-en="ARAWAN PANTHONG">เอราวัณ แป้นทอง</span></footer>
+<script>
+// ---------- ภาษา / Language ----------
+const TITLES={th:'เรซูเม่ - นางสาว เอราวัณ แป้นทอง',en:'Resume - Miss Arawan Panthong'};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('.i').forEach(e=>{if(e.dataset.th===undefined)e.dataset.th=e.innerHTML;e.innerHTML=l==='en'?e.dataset.en:e.dataset.th});
+  document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  document.title=TITLES[l];
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang-sw button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let saved='th';try{saved=localStorage.getItem('lang')||'th'}catch(e){}
+setLang(saved==='en'?'en':'th');
+
+// ---------- รูปโปรไฟล์สลับกัน ----------
+window.addEventListener('load',()=>{
+  const all=[...document.querySelectorAll('.avatar img')];
+  const ok=all.filter(i=>i.naturalWidth>0);
+  all.forEach(i=>{if(!i.naturalWidth)i.remove()});
+  if(!ok.length)return;
+  let k=0;ok[0].classList.add('on');
+  if(ok.length>1)setInterval(()=>{ok[k].classList.remove('on');k=(k+1)%ok.length;ok[k].classList.add('on')},4000);
+});
+
+// ---------- ไฮไลต์เมนู / เอฟเฟกต์ ----------
+const links=document.querySelectorAll('.menu a');
+const obs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id));}});},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('main section').forEach(s=>obs.observe(s));
+document.documentElement.classList.add('js');
+const rv=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('show');rv.unobserve(en.target)}}),{threshold:.1});
+document.querySelectorAll('main section').forEach(x=>{x.classList.add('reveal');rv.observe(x)});
+
+// ---------- Lightbox รูปสัมมนา ----------
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.querySelectorAll('.shot').forEach(f=>f.addEventListener('click',()=>{
+  const im=f.querySelector('img');if(im.style.display==='none')return;lbi.src=im.src;lb.classList.add('open')}));
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+
+// ---------- หน้าต่างเรซูเม่ ----------
+const cvm=document.getElementById('cvModal');
+document.getElementById('cvOpen').onclick=()=>{cvm.classList.add('open');document.body.style.overflow='hidden'};
+const cvc=()=>{cvm.classList.remove('open');document.body.style.overflow=''};
+document.getElementById('cvClose').onclick=cvc;
+cvm.addEventListener('click',e=>{if(e.target===cvm)cvc()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');cvc()}});
+</script>
+</body>
+</html>
